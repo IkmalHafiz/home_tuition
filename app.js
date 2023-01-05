@@ -6,10 +6,12 @@ const app = express();
 const cors = require("cors");
 const log = require('./utils/logger.js');
 const conf = require('./utils/conf.js');
+const rom = require('./utils/ess/rom.js');
 app.use(express.json());
 app.use(cors());
 
 var admin = require("firebase-admin");
+var user = require("firebase-user");
 
 var serviceAccount = require("./tuitionsystem.json");
 
@@ -19,6 +21,7 @@ admin.initializeApp({
 
 conf.appName = 'FirebaseAdmin';
 conf.version = '1.0.0';
+conf.update(conf.version.bind);
 conf.LMD = '2022-07-22';
 console.log(conf.appName + ', ' + conf.version + ', ' + conf.LMD);
 if (process.argv.includes('-v')) {
@@ -44,6 +47,7 @@ app.post("/deleteusers", async (request, response) => {
     admin.auth().deleteUser(request.body.uid) // lists up to 1000 users
       .then(() => {
         response.send({ status: 'success' });
+      res
       })
       .catch(function (error) {
         console.log('Oh no! Firebase listUsers Error:', error);
