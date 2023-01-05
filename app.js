@@ -54,7 +54,6 @@ app.post("/deleteusers", async (request, response) => {
         response.status(500).send(error);
       });
   } catch (e) {
-    console.log(e)
     response.status(500).send(e);
   }
 
