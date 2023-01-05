@@ -73,7 +73,6 @@ app.post("/deleteusers", async (request, response) => {
 //     console.log('Error creating new user:', error);
 //   });
 
-
 app.post("/createNewUser", async (request, response) => {
   const password=request.body.password
   const email=request.body.email
