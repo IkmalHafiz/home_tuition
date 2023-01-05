@@ -9,7 +9,8 @@ import {
   userUpdateReducer,
   getChildListReducer,
   getTutorListReducer,
-  getSelfDataReducer
+  getSelfDataReducer,
+  getUpdateUser
 } from './reducers/userReducers'
 import {
   getReportReducer,
@@ -19,6 +20,7 @@ import {
 
 import {
   getEventReducer,
+  getUpdate,
   updateEventReducer,
   addEventReducer
   
@@ -37,6 +39,7 @@ import {
 } from './reducers/paymentReducers'
 import { getClassReducer,getStudentReducer,updateClassReducer ,getUserTimetableReducer} from './reducers/subjectReducers'
 import { getCommentsReducer,updateCommentsReducer ,getRatingReducer,updateRatingReducer} from './reducers/commentsReducers'
+import { getUpdateUser,getUpdate  } from '/reducers/update'
 
 
 const initialState = {
