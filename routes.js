@@ -13,7 +13,6 @@ app.post("/add_user", async (request, response) => {
     }
 });
 
-
 app.get("/users", async (request, response) => {
     
     const users = await userModel.find({});
